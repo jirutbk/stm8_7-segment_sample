@@ -7,7 +7,7 @@ MCU : stm8s103
 
 7-Segment  (Common Anode)
 PORTB mapping
-  a   ->  PB_0\n
+  a   ->  PB_0
   b   ->  PB_1
   c   ->  PB_2
   dot ->  PB_3
