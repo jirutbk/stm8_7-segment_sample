@@ -22,7 +22,7 @@ ALL_PIN equ $FF
 		mov PB_CR1, #ALL_PIN	;Push-Pull
 
 main
-		mov PB_ODR, #Digit0		;display digit
+		mov PB_ODR, #Digit0	;display digit
 		call delay
 		mov PB_ODR, #Digit1	
 		call delay
