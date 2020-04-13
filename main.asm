@@ -16,10 +16,10 @@ Digit9	equ $28
 PB_DDR 	equ $5007
 PB_ODR 	equ $5005
 PB_CR1 	equ $5008
-ALL_PIN equ $FF
+PIN_ALL equ $FF
 
-		mov PB_DDR, #ALL_PIN	;Output mode
-		mov PB_CR1, #ALL_PIN	;Push-Pull
+		mov PB_DDR, #PIN_ALL	;Output mode
+		mov PB_CR1, #PIN_ALL	;Push-Pull
 
 main
 		mov PB_ODR, #Digit0	;display digit
