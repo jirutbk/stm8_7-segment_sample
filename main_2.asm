@@ -16,7 +16,7 @@ main
 	ldw	X,#0		
 loop
 	ld A,(digits,X)		;ในวงเล็บห้ามวรรค
-	ld	PB_ODR, A	;display digit
+	ld PB_ODR, A		;display digit
 	pushw	X
 	call delay	
 	popw X
