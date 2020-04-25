@@ -2,11 +2,12 @@ stm8/
   #include "mapping.inc"
 
   segment 'rom'	
-
 PB_DDR 	equ $5007
 PB_ODR 	equ $5005
 PB_CR1 	equ $5008
 PIN_ALL equ $FF
+digits	dc.b	$88,$F9,$4C,$68,$39,$2A,$0A,$B8,$08,$28
+numDigit dc.w	$000A	;จำนวนตัวเลข 10 (จองพื้นที่ขนาด 1 word)
 
 	mov PB_DDR, #PIN_ALL	;Output mode
 	mov PB_CR1, #PIN_ALL	;Push-Pull	
@@ -14,14 +15,14 @@ PIN_ALL equ $FF
 main
 	ldw	X,#0		
 loop
-	ld A,(digits,X)	; �ǧ���������ä
-	ld	PB_ODR, A		;display digit
+	ld A,(digits,X)		;ในวงเล็บห้ามวรรค
+	ld	PB_ODR, A	;display digit
 	pushw	X
 	call delay	
 	popw X
 	incw X	
 	cpw X,numDigit
-	jrc loop		;������º��º������ҡѹ
+	jrc loop		;ถ้า X=numDigit jump
 	jra main
 		
 delay:
@@ -34,10 +35,7 @@ yloop
 	decw X
 	jrne xloop
 	ret
-
-digits	dc.b	$88,$F9,$4C,$68,$39,$2A,$0A,$B8,$08,$28
-numDigit dc.w	$000A	;10
-
+	
 	end
 		
 
