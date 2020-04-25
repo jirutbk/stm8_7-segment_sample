@@ -7,7 +7,7 @@ PB_ODR 	equ $5005
 PB_CR1 	equ $5008
 PIN_ALL equ $FF
 digits	dc.b	$88,$F9,$4C,$68,$39,$2A,$0A,$B8,$08,$28
-numDigit dc.w	$000A	;จำนวนตัวเลข 10 (จองพื้นที่ขนาด 1 word)
+numDigit dc.w	$000A	;จองพื้นที่ขนาด 1 word
 
 	mov PB_DDR, #PIN_ALL	;Output mode
 	mov PB_CR1, #PIN_ALL	;Push-Pull	
